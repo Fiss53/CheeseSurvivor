@@ -1,7 +1,11 @@
 extends CharacterBody2D
+
 @onready var animated_sprite = get_node("AnimatedSpritePlayer")
 @export var SPEED = 2
 var direction
+
+var type_ = "player"
+
 func _process(delta):
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	var direction_y = Input.get_axis("ui_up", "ui_down")

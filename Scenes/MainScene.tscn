@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=25 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
 [ext_resource type="Texture2D" uid="uid://ds7ovdjey2pi4" path="res://Assets/CharacterSheet.png" id="2_48xf5"]
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="4_yr7lc"]
+[ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="5_rq75v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t080o"]
 atlas = ExtResource("2_48xf5")
@@ -177,7 +178,7 @@ script = ExtResource("1_72qwc")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1hmxf")
-animation = &"left"
+animation = &"upRight"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -33, 24, -33, 14, -5, -36)
@@ -201,6 +202,9 @@ label_settings = SubResource("LabelSettings_5lgrv")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_yr7lc")
+
+[node name="BaguetteSword" parent="Player" instance=ExtResource("5_rq75v")]
+position = Vector2(38, 0)
 
 [node name="EnnemyPool" type="Node2D" parent="."]
 script = ExtResource("3_v0ycr")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqomsa8qaxu1k"]
+
+[ext_resource type="Script" path="res://Scripts/BaguetteSword.gd" id="1_k3av8"]
+[ext_resource type="Texture2D" uid="uid://muh2fxr1p55o" path="res://Assets/baguette.png" id="1_tg12j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2k82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tg12j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5tp2"]
+radius = 151.03
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aibm"]
+size = Vector2(192, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33maa"]
+size = Vector2(192, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mevc"]
+size = Vector2(117, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p6p"]
+size = Vector2(115, 224)
+
+[node name="BaguetteSword" type="Node2D"]
+script = ExtResource("1_k3av8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_d2k82")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_a5tp2")
+disabled = true
+
+[node name="Area2DLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DLeft"]
+position = Vector2(-69, 2)
+shape = SubResource("RectangleShape2D_3aibm")
+
+[node name="Area2DRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DRight"]
+position = Vector2(65, 2)
+shape = SubResource("RectangleShape2D_33maa")
+
+[node name="Area2DUp" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DUp"]
+position = Vector2(1.5, -58)
+shape = SubResource("RectangleShape2D_0mevc")
+
+[node name="Area2DDown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDown"]
+position = Vector2(1.5, 61)
+shape = SubResource("RectangleShape2D_q7p6p")
+
+[connection signal="body_entered" from="Area2D" to="." method="_collision"]
+[connection signal="body_entered" from="Area2DLeft" to="." method="_collision"]
+[connection signal="body_entered" from="Area2DRight" to="." method="_collision"]
+[connection signal="body_entered" from="Area2DUp" to="." method="_collision"]
+[connection signal="body_entered" from="Area2DDown" to="." method="_collision"]
