@@ -4,7 +4,7 @@ extends Node2D
 
 var ennemies_count = 0
 
-func _process(delta):
+func _process(_delta):
 	if (ennemies_count < MAX_ENNEMIES):
 		var angle = randf_range(0, 2 * PI)
 		
