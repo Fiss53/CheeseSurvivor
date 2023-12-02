@@ -27,5 +27,5 @@ func attack(damage):
 		health_points = 0
 	if health_points == 0:
 		queue_free()
-		get_node("/root/MainScene/EnnemyPool").MAX_ENNEMIES += 1
+		get_node("/root/MainScene/EnnemyPool").max_ennemies += 1
 	#print('hp: ' + str(health_points))

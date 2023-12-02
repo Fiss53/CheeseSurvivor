@@ -1,10 +1,15 @@
 extends Node2D
 
-@export var MAX_ENNEMIES = 10
+@export var ENNEMIES_BOUND = 50
+@export var max_ennemies = 10
 
 func _process(_delta):
 	var ennemies_count = get_child_count()
-	if (ennemies_count < MAX_ENNEMIES):
+	
+	if (max_ennemies > ENNEMIES_BOUND):
+		max_ennemies = ENNEMIES_BOUND
+	
+	if (ennemies_count < max_ennemies):
 		var r_min = 900
 		var r_max = 1900
 		
