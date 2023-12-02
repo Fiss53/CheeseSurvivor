@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c04fbubs7x5oq"]
+
+[ext_resource type="Script" path="res://Scripts/Ennemy.gd" id="1_81sga"]
+[ext_resource type="Texture2D" uid="uid://yudj46ay81gs" path="res://Assets/SourisEnemy.png" id="2_pjk72"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e02wk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pjk72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ennemy" type="CharacterBody2D"]
+script = ExtResource("1_81sga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_e02wk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -1.5708
+polygon = PackedVector2Array(21, 14, 1, 33, -17, 14, -17, -2, -8, -9, -8, -21, -2, -25, -6, -31, -12, -31, -15, -35, -11, -38, -3, -38, 11, -21, 12, -9, 21, -2)

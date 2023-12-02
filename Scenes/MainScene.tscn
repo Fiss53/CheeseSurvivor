@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=5 format=3 uid="uid://8srdgtfdfh0p"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_72qwc"]
-[ext_resource type="Texture2D" uid="uid://ytislf0531an" path="res://icon.svg" id="1_vmurq"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
+[ext_resource type="Texture2D" uid="uid://hmosy6wj2evy" path="res://Assets/CharacterV4.png" id="2_t3ogw"]
+[ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hmxf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vmurq")
+"texture": ExtResource("2_t3ogw")
 }],
 "loop": true,
 "name": &"default",
@@ -19,9 +20,15 @@ animations = [{
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_72qwc")
 
-[node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+texture_filter = 1
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1hmxf")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -33, 24, -33, 14, -5, -36)
+
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
+
+[node name="EnnemyPool" type="Node2D" parent="."]
+script = ExtResource("3_v0ycr")

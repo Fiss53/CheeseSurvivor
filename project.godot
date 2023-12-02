@@ -14,6 +14,10 @@ config/name="Cheese Survivor"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Player="*res://Scripts/Player.gd"
+
 [display]
 
 window/size/mode=3
