@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite = get_node("AnimatedSpritePlayer")
 @export var SPEED = 2
 var direction
+var last_direction = Vector2.RIGHT
 
 var type_ = "player"
 
@@ -20,6 +21,9 @@ func _process(delta):
 		Vector2.DOWN: animated_sprite.play("left")
 		Vector2(1,-1): animated_sprite.play("upRight")
 		Vector2(-1,-1): animated_sprite.play("upLeft")
+	if direction != Vector2.ZERO:
+		last_direction = direction
+	$Weapon.orientate()
 	
 	velocity = Vector2(direction_x, direction_y).normalized() * SPEED / delta
 	

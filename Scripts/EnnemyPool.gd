@@ -1,10 +1,9 @@
 extends Node2D
 
-@export var MAX_ENNEMIES = 5
-
-var ennemies_count = 0
+@export var MAX_ENNEMIES = 10
 
 func _process(_delta):
+	var ennemies_count = get_child_count()
 	if (ennemies_count < MAX_ENNEMIES):
 		var angle = randf_range(0, 2 * PI)
 		
@@ -16,4 +15,3 @@ func _process(_delta):
 		ennemy.position.y = $"../Player".position.y + ennemy_y
 		
 		add_child(ennemy)
-		ennemies_count += 1
