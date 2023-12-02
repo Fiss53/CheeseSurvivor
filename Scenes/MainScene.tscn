@@ -205,7 +205,7 @@ script = ExtResource("1_72qwc")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1hmxf")
-animation = &"upRight"
+animation = &"left"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -33, 24, -33, 14, -5, -36)
