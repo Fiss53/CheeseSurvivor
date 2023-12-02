@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=8 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
 [ext_resource type="Texture2D" uid="uid://hmosy6wj2evy" path="res://Assets/CharacterV4.png" id="2_t3ogw"]
+[ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
+[ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="4_yr7lc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hmxf"]
 animations = [{
@@ -14,6 +16,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5lgrv"]
+font = ExtResource("3_cev2e")
 
 [node name="MainScene" type="Node2D"]
 
@@ -29,6 +34,24 @@ sprite_frames = SubResource("SpriteFrames_1hmxf")
 polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -33, 24, -33, 14, -5, -36)
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
+
+[node name="TimeLabel" type="Label" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -357.0
+offset_right = 40.5
+offset_bottom = -331.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time label"
+label_settings = SubResource("LabelSettings_5lgrv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_yr7lc")
 
 [node name="EnnemyPool" type="Node2D" parent="."]
 script = ExtResource("3_v0ycr")
