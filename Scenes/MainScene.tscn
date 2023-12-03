@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
 [ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="6_8ugf6"]
-[ext_resource type="PackedScene" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
+[ext_resource type="PackedScene" uid="uid://dxfaea757bqu4" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
 [ext_resource type="LabelSettings" uid="uid://sridghe1w6d1" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
 
