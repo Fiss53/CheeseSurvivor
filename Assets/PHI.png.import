@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://i0o4io83l1ic"
-=======
-uid="uid://djlhpumpt4wly"
->>>>>>> 40f4e9290ba3b7c6c8fc22567f7f82584c0678a5
-path="res://.godot/imported/DeadMouse.png-975689a7b15f3524b749cdfb61ea0398.ctex"
+uid="uid://2lnbsaeator4"
+path="res://.godot/imported/PHI.png-dbe438ce9a75c7ac37d878536101da19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DeadMouse.png"
-dest_files=["res://.godot/imported/DeadMouse.png-975689a7b15f3524b749cdfb61ea0398.ctex"]
+source_file="res://Assets/PHI.png"
+dest_files=["res://.godot/imported/PHI.png-dbe438ce9a75c7ac37d878536101da19.ctex"]
 
 [params]
 
