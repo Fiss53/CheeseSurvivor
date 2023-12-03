@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite = get_node("AnimatedSpritePlayer")
 @export var SPEED = 2
 @export var health_points = 100
+var experience_points = 0
 var direction
 var last_direction = Vector2.RIGHT
 
@@ -13,6 +14,7 @@ func _ready():
 	
 
 func _process(delta):
+	_update_exp_label()
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	var direction_y = Input.get_axis("ui_up", "ui_down")
 	direction = Vector2(direction_x,direction_y)
@@ -36,6 +38,9 @@ func _process(delta):
 
 func _update_hp_label():
 	$HPLabel.text = "HP : %d/100" % health_points
+	
+func _update_exp_label():
+	$EXPLabel.text = "EXP : %d" % experience_points
 
 func _update_shield_hp_label():
 	$ShieldHPLabel.text = "Shield : %d/100" % $SecondaryWeapon.health_points

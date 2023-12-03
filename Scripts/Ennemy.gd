@@ -51,10 +51,11 @@ func attack(damage):
 
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
+	
 	get_node("/root/MainScene/EnnemyPool").max_ennemies += 1
 	
 	var player_vars = get_node("/root/MainScene/Player")
-	
+	player_vars.experience_points += 10
 	var dead_mouse_texture = ImageTexture.create_from_image(
 		Image.load_from_file("res://Assets/DeadMouse.png"))
 	
