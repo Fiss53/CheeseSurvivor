@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=35 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
@@ -8,8 +8,10 @@
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
 [ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="6_8ugf6"]
 [ext_resource type="PackedScene" uid="uid://dxfaea757bqu4" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
-[ext_resource type="LabelSettings" uid="uid://sridghe1w6d1" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
+[ext_resource type="LabelSettings" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
+[ext_resource type="AudioStream" uid="uid://1ow3arihwi86" path="res://Soundtracks/JeanPierre.mp3" id="11_jk22v"]
+[ext_resource type="Script" path="res://Scripts/BackgroundMusic.gd" id="12_afynx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_samy0"]
 tile_data = PackedInt32Array(0, 65536, 0, 65536, 0, 0, 1, 0, 0, 65537, 65536, 0)
@@ -312,3 +314,10 @@ shape = SubResource("RectangleShape2D_6y2p4")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(174, 2444)
 shape = SubResource("RectangleShape2D_6y2p4")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_jk22v")
+autoplay = true
+script = ExtResource("12_afynx")
+
+[connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_finished"]
