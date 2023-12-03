@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://rffeoaof7v0a"]
+
+[ext_resource type="Script" path="res://Scripts/GoldenSpiralGun.gd" id="1_7826a"]
+
+[node name="GoldenSpiralGun" type="Node2D"]
+script = ExtResource("1_7826a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
