@@ -37,7 +37,18 @@ func _process(delta):
 func _update_hp_label():
 	$HPLabel.text = "HP : %d/100" % health_points
 
+func _update_shield_hp_label():
+	$ShieldHPLabel.text = "Shield : %d/100" % $SecondaryWeapon.health_points
+
 func attack(damage):
+	# shield = no damage
+	if "type_" in $SecondaryWeapon:
+		if $SecondaryWeapon.type_ == "shield":
+			if $SecondaryWeapon.visible:
+				$SecondaryWeapon.attack(damage)
+				_update_shield_hp_label()
+				return
+	
 	health_points -= damage
 	if health_points < 0:
 		health_points = 0
