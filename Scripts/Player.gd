@@ -2,10 +2,15 @@ extends CharacterBody2D
 
 @onready var animated_sprite = get_node("AnimatedSpritePlayer")
 @export var SPEED = 2
+@export var health_points = 100
 var direction
 var last_direction = Vector2.RIGHT
 
 var type_ = "player"
+
+func _ready():
+	_update_hp_label()
+	
 
 func _process(delta):
 	var direction_x = Input.get_axis("ui_left", "ui_right")
@@ -28,3 +33,12 @@ func _process(delta):
 	velocity = Vector2(direction_x, direction_y).normalized() * SPEED / delta
 	
 	move_and_slide()
+
+func _update_hp_label():
+	$HPLabel.text = "HP : %d/100" % health_points
+
+func attack(damage):
+	health_points -= damage
+	if health_points < 0:
+		health_points = 0
+	_update_hp_label()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgmwk7uqwmhit"
-path="res://.godot/imported/shieldExploding.png-3332996e7b9bd862e2022db3e2db4125.ctex"
+uid="uid://bby2ik3r62dph"
+path="res://.godot/imported/XPBubble.png-2c29e01073dcd9da36398bc524e5d31a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/shieldExploding.png"
-dest_files=["res://.godot/imported/shieldExploding.png-3332996e7b9bd862e2022db3e2db4125.ctex"]
+source_file="res://Assets/XPBubble.png"
+dest_files=["res://.godot/imported/XPBubble.png-2c29e01073dcd9da36398bc524e5d31a.ctex"]
 
 [params]
 

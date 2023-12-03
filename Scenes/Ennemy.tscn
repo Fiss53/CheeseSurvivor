@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c04fbubs7x5oq"]
+[gd_scene load_steps=11 format=3 uid="uid://c04fbubs7x5oq"]
 
 [ext_resource type="Script" path="res://Scripts/Ennemy.gd" id="1_81sga"]
 [ext_resource type="Texture2D" uid="uid://yudj46ay81gs" path="res://Assets/SourisEnemy.png" id="2_pjk72"]
@@ -50,6 +50,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nt30w"]
+radius = 77.0065
+
 [node name="Ennemy" type="CharacterBody2D"]
 script = ExtResource("1_81sga")
 
@@ -67,4 +70,11 @@ polygon = PackedVector2Array(21, 14, 1, 33, -17, 14, -17, -2, -8, -9, -8, -21, -
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
+[node name="AttackArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
+shape = SubResource("CircleShape2D_nt30w")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
+[connection signal="body_exited" from="AttackArea2D" to="." method="_on_attack_area_2d_body_exited"]

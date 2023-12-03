@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var ENNEMIES_BOUND = 50
+@export var ENNEMIES_BOUND = 30
 @export var max_ennemies = 10
 
 func _process(_delta):

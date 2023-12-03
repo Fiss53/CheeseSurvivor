@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var SPEED = 2
 @export var health_points = 100
 @onready var animation = get_node("AnimatedSprite2D")
+var is_attacking = false
+var damage = 1
+var attack_duration = 1
+var time_till_attack_end = 1
 
 var type_ = "enemy"
 
@@ -25,6 +29,13 @@ func _process(delta):
 	else:
 		look_at(player_vars.position)
 		move_and_slide()
+	
+	if is_attacking:
+		if time_till_attack_end >= 0:
+			time_till_attack_end -= delta
+		else:
+			player_vars.attack(damage)
+			time_till_attack_end = attack_duration
 
 func attack(damage):
 	health_points -= damage
@@ -56,3 +67,15 @@ func _on_animated_sprite_2d_animation_finished():
 	dead_mouse_sprite.rotate(-PI / 2)
 	
 	get_node("/root/MainScene/DeadEnnemies").add_child(dead_mouse_sprite)
+
+
+func _on_attack_area_2d_body_entered(body):
+	if "type_" in body:
+		if body.type_ == "player":
+			is_attacking = true
+
+
+func _on_attack_area_2d_body_exited(body):
+	if "type_" in body:
+		if body.type_ == "player":
+			is_attacking = false
