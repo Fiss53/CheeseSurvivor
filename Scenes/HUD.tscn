@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7ny6gatgwgee"]
+[gd_scene load_steps=3 format=3 uid="uid://cjtisnygl55x8"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_v7f1c"]
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="2_oqauc"]
