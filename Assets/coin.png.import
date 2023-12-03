@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1u8ee7vg4aqr"
-path="res://.godot/imported/DeadMouse.png-975689a7b15f3524b749cdfb61ea0398.ctex"
+uid="uid://deg1n3x8dre3y"
+path="res://.godot/imported/coin.png-23e506fc535e1e81a67b247520f1351a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DeadMouse.png"
-dest_files=["res://.godot/imported/DeadMouse.png-975689a7b15f3524b749cdfb61ea0398.ctex"]
+source_file="res://Assets/coin.png"
+dest_files=["res://.godot/imported/coin.png-23e506fc535e1e81a67b247520f1351a.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=33 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
@@ -6,8 +6,9 @@
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
-[ext_resource type="PackedScene" path="res://Prefabs/Weapons/CarotBow.tscn" id="7_mipgg"]
+[ext_resource type="PackedScene" uid="uid://dvo1j8asytdrh" path="res://Prefabs/Weapons/CarotBow.tscn" id="7_mipgg"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
+[ext_resource type="PackedScene" uid="uid://rffeoaof7v0a" path="res://Prefabs/Weapons/GoldenSpiralGun.tscn" id="9_f8g6f"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_samy0"]
 tile_data = PackedInt32Array(0, 65536, 0, 65536, 0, 0, 1, 0, 0, 65537, 65536, 0)
@@ -241,6 +242,8 @@ script = ExtResource("5_wd5px")
 
 [node name="Weapon" parent="Player" instance=ExtResource("7_mipgg")]
 position = Vector2(38, 2.08165e-12)
+
+[node name="SecondaryWeapon" parent="Player" instance=ExtResource("9_f8g6f")]
 
 [node name="EnnemyPool2" type="Node2D" parent="."]
 script = ExtResource("3_v0ycr")
