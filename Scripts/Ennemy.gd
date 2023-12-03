@@ -41,3 +41,18 @@ func attack(damage):
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
 	get_node("/root/MainScene/EnnemyPool").max_ennemies += 1
+	
+	var player_vars = get_node("/root/MainScene/Player")
+	
+	var dead_mouse_texture = ImageTexture.create_from_image(
+		Image.load_from_file("res://Assets/DeadMouse.png"))
+	
+	var dead_mouse_sprite = Sprite2D.new()
+	
+	dead_mouse_sprite.set_texture(dead_mouse_texture)
+	dead_mouse_sprite.set_scale(Vector2(3, 3))
+	dead_mouse_sprite.position = position
+	dead_mouse_sprite.look_at(player_vars.position)
+	dead_mouse_sprite.rotate(-PI / 2)
+	
+	get_node("/root/MainScene/DeadEnnemies").add_child(dead_mouse_sprite)
