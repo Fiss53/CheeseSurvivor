@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://sridghe1w6d1"]
+
+[ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="1_mibk4"]
+
+[resource]
+font = ExtResource("1_mibk4")
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

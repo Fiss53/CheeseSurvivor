@@ -1,14 +1,14 @@
-[gd_scene load_steps=34 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=33 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
 [ext_resource type="Texture2D" uid="uid://ds7ovdjey2pi4" path="res://Assets/CharacterSheet.png" id="2_48xf5"]
 [ext_resource type="Script" path="res://Scripts/DeadEnnemies.gd" id="2_r3tma"]
-[ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
 [ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="6_8ugf6"]
-[ext_resource type="PackedScene" uid="uid://dxfaea757bqu4" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
+[ext_resource type="PackedScene" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
+[ext_resource type="LabelSettings" uid="uid://sridghe1w6d1" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_samy0"]
@@ -184,12 +184,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_5lgrv"]
-font = ExtResource("3_cev2e")
-font_size = 20
-outline_size = 5
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s38r5"]
 size = Vector2(332, 5618)
 
@@ -241,7 +235,7 @@ offset_bottom = -283.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Time label"
-label_settings = SubResource("LabelSettings_5lgrv")
+label_settings = ExtResource("8_5ofox")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_wd5px")
@@ -259,7 +253,7 @@ offset_bottom = -285.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "HP : 100/100"
-label_settings = SubResource("LabelSettings_5lgrv")
+label_settings = ExtResource("8_5ofox")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -276,7 +270,7 @@ offset_bottom = -245.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Shield : 100/100"
-label_settings = SubResource("LabelSettings_5lgrv")
+label_settings = ExtResource("8_5ofox")
 horizontal_alignment = 1
 vertical_alignment = 1
 
