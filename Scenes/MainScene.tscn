@@ -1,12 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=32 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
 [ext_resource type="Texture2D" uid="uid://ds7ovdjey2pi4" path="res://Assets/CharacterSheet.png" id="2_48xf5"]
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
-[ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="5_rq75v"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
+[ext_resource type="PackedScene" uid="uid://dvo1j8asytdrh" path="res://Prefabs/Weapons/CarotBow.tscn" id="7_mipgg"]
+[ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_samy0"]
 tile_data = PackedInt32Array(0, 65536, 0, 65536, 0, 0, 1, 0, 0, 65537, 65536, 0)
@@ -187,6 +188,12 @@ font_size = 20
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s38r5"]
+size = Vector2(332, 5618)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y2p4"]
+size = Vector2(8522, 325)
+
 [node name="MainScene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -230,6 +237,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_wd5px")
 
-[node name="Weapon" parent="Player" instance=ExtResource("5_rq75v")]
-texture_filter = 1
-position = Vector2(38, 0)
+[node name="Weapon" parent="Player" instance=ExtResource("7_mipgg")]
+position = Vector2(38, 2.08165e-12)
+
+[node name="EnnemyPool2" type="Node2D" parent="."]
+script = ExtResource("3_v0ycr")
+
+[node name="Bounds" type="Area2D" parent="."]
+script = ExtResource("8_t6rl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(-4156, -183)
+shape = SubResource("RectangleShape2D_s38r5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(4338, -109)
+shape = SubResource("RectangleShape2D_s38r5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(200, -2811)
+shape = SubResource("RectangleShape2D_6y2p4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(174, 2444)
+shape = SubResource("RectangleShape2D_6y2p4")

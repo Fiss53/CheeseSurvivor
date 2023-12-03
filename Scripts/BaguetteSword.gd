@@ -61,8 +61,5 @@ func orientate():
 func _collision(body):
 	if is_attacking:
 		if 'type_' in body:
-			var type_element = body.type_
-			if type_element == 'enemy':
+			if body.type_ == 'enemy':
 				body.attack(damage)
-	else:
-		pass

@@ -1,0 +1,153 @@
+[gd_scene load_steps=22 format=3 uid="uid://dvo1j8asytdrh"]
+
+[ext_resource type="Script" path="res://Scripts/CarotBow.gd" id="1_kbvfv"]
+[ext_resource type="Texture2D" uid="uid://b6hooh2noctxf" path="res://Assets/final_arc.png" id="2_geind"]
+[ext_resource type="Texture2D" uid="uid://3yimetmg2n1p" path="res://Assets/arc_animation.png" id="4_701ih"]
+[ext_resource type="PackedScene" uid="uid://dmy31nadcwu2g" path="res://Prefabs/Weapons/CarotArrow.tscn" id="6_exanj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th6x1"]
+atlas = ExtResource("4_701ih")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1nwi"]
+atlas = ExtResource("4_701ih")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkl7s"]
+atlas = ExtResource("4_701ih")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d5en"]
+atlas = ExtResource("4_701ih")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0uid"]
+atlas = ExtResource("4_701ih")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h4e5"]
+atlas = ExtResource("4_701ih")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhomr"]
+atlas = ExtResource("4_701ih")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id11d"]
+atlas = ExtResource("4_701ih")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmvb1"]
+atlas = ExtResource("4_701ih")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arepx"]
+atlas = ExtResource("4_701ih")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsejd"]
+atlas = ExtResource("4_701ih")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr0gu"]
+atlas = ExtResource("4_701ih")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ttwm"]
+atlas = ExtResource("4_701ih")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lvgr"]
+atlas = ExtResource("4_701ih")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfkk3"]
+atlas = ExtResource("4_701ih")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o16ew"]
+atlas = ExtResource("4_701ih")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bykq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th6x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1nwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkl7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d5en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0uid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h4e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhomr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id11d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmvb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arepx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr0gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ttwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lvgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfkk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o16ew")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 120.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_geind")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 120.0
+}]
+
+[node name="CarotBow" type="Node2D"]
+script = ExtResource("1_kbvfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_geind")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6bykq")
+animation = &"idle"
+frame_progress = 1.0
+
+[node name="CarotArrow" parent="." instance=ExtResource("6_exanj")]
+visible = false
