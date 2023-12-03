@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="3_cev2e"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
-[ext_resource type="PackedScene" uid="uid://dvo1j8asytdrh" path="res://Prefabs/Weapons/CarotBow.tscn" id="7_mipgg"]
+[ext_resource type="PackedScene" path="res://Prefabs/Weapons/CarotBow.tscn" id="7_mipgg"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_samy0"]
