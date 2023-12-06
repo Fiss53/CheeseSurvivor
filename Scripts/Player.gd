@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = get_node("AnimatedSpritePlayer")
-@export var SPEED = 2
+@export var SPEED = 3
 @export var health_points = 100
 var experience_points = 0
 var direction
@@ -35,6 +35,8 @@ func _process(delta):
 	velocity = Vector2(direction_x, direction_y).normalized() * SPEED / delta
 	
 	move_and_slide()
+	if health_points == 0:
+		get_tree().quit()
 
 func _update_hp_label():
 	$HPLabel.text = "HP : %d/100" % health_points

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqomsa8qaxu1k"]
 
 [ext_resource type="Script" path="res://Scripts/BaguetteSword.gd" id="1_k3av8"]
-[ext_resource type="Texture2D" uid="uid://muh2fxr1p55o" path="res://Assets/baguette.png" id="1_tg12j"]
+[ext_resource type="Texture2D" uid="uid://vaxxyo8mfbo7" path="res://Assets/baguette.png" id="1_tg12j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2k82"]
 animations = [{
