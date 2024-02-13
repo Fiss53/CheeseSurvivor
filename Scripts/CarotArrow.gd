@@ -5,7 +5,7 @@ var nb_frames = 16.0
 var nb_fps = 210.0
 var speed
 var is_attacking = false
-var damage = 50
+var damage = 100
 
 var last_player_direction
 
@@ -68,3 +68,7 @@ func _on_area_2d_area_entered(area):
 	if "type_" in area:
 		if area.type_ == "bounds":
 			queue_free()
+
+
+func _on_timer_timeout():
+	queue_free()

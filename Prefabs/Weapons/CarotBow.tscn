@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/CarotBow.gd" id="1_kbvfv"]
 [ext_resource type="Texture2D" uid="uid://b6hooh2noctxf" path="res://Assets/final_arc.png" id="2_geind"]
 [ext_resource type="Texture2D" uid="uid://3yimetmg2n1p" path="res://Assets/arc_animation.png" id="4_701ih"]
-[ext_resource type="PackedScene" path="res://Prefabs/Weapons/CarotArrow.tscn" id="6_exanj"]
+[ext_resource type="PackedScene" uid="uid://dmy31nadcwu2g" path="res://Prefabs/Weapons/CarotArrow.tscn" id="6_exanj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_th6x1"]
 atlas = ExtResource("4_701ih")

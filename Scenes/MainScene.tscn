@@ -1,14 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=36 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
 [ext_resource type="Texture2D" uid="uid://ds7ovdjey2pi4" path="res://Assets/CharacterSheet.png" id="2_48xf5"]
 [ext_resource type="Script" path="res://Scripts/DeadEnnemies.gd" id="2_r3tma"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
+[ext_resource type="Script" path="res://Scripts/PetsPool.gd" id="4_qu7lb"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
 [ext_resource type="PackedScene" uid="uid://bkiprenms31br" path="res://Prefabs/Weapons/CarotBow.tscn" id="6_dm7bv"]
-[ext_resource type="PackedScene" uid="uid://dxfaea757bqu4" path="res://Prefabs/Weapons/Shield.tscn" id="8_3g8os"]
-[ext_resource type="LabelSettings" uid="uid://sridghe1w6d1" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
+[ext_resource type="PackedScene" uid="uid://bgpvv05hhlesm" path="res://Prefabs/Weapons/RabbitPetGenerator.tscn" id="7_rm7dw"]
+[ext_resource type="LabelSettings" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
 [ext_resource type="AudioStream" uid="uid://1ow3arihwi86" path="res://Soundtracks/JeanPierre.mp3" id="11_jk22v"]
 [ext_resource type="Script" path="res://Scripts/BackgroundMusic.gd" id="12_afynx"]
@@ -206,6 +207,9 @@ script = ExtResource("2_r3tma")
 [node name="EnnemyPool" type="Node2D" parent="."]
 script = ExtResource("3_v0ycr")
 
+[node name="PetsPool" type="Node2D" parent="."]
+script = ExtResource("4_qu7lb")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_72qwc")
 
@@ -222,7 +226,7 @@ polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -
 
 [node name="Weapon" parent="Player" instance=ExtResource("6_dm7bv")]
 
-[node name="SecondaryWeapon" parent="Player" instance=ExtResource("8_3g8os")]
+[node name="SecondaryWeapon" parent="Player" instance=ExtResource("7_rm7dw")]
 
 [node name="TimeLabel" type="Label" parent="Player"]
 anchors_preset = 8
@@ -320,4 +324,5 @@ stream = ExtResource("11_jk22v")
 autoplay = true
 script = ExtResource("12_afynx")
 
+[connection signal="rabbit_pet_generated" from="Player/SecondaryWeapon" to="PetsPool" method="_on_secondary_weapon_rabbit_pet_generated"]
 [connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_finished"]

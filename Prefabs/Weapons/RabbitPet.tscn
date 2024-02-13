@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2uiukvdp22gs"]
+
+[ext_resource type="Script" path="res://Scripts/RabbitPet.gd" id="1_6qvjj"]
+[ext_resource type="Texture2D" uid="uid://hmosy6wj2evy" path="res://Assets/CharacterV4.png" id="2_rovqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5h41"]
+size = Vector2(25.3333, 28.3333)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_70ipu"]
+radius = 45.6314
+
+[node name="RabbitPet" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_6qvjj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rovqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.666666, 1.83333)
+shape = SubResource("RectangleShape2D_v5h41")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AttackArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
+shape = SubResource("CircleShape2D_70ipu")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
+[connection signal="body_exited" from="AttackArea2D" to="." method="_on_attack_area_2d_body_exited"]
