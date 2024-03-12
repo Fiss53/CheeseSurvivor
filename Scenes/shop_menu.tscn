@@ -1,0 +1,184 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj41rc5y1d876"]
+
+[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_erctg"]
+[ext_resource type="Texture2D" uid="uid://doqv405iut3t0" path="res://Assets/background_shop.png" id="2_u0omt"]
+[ext_resource type="LabelSettings" uid="uid://sridghe1w6d1" path="res://Fonts/Settings_label_menu.tres" id="3_o1qbs"]
+
+[node name="ShopMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erctg")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("2_u0omt")
+
+[node name="Bow" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 334.0
+offset_top = 292.0
+offset_right = 453.936
+offset_bottom = 328.224
+
+[node name="BowText" type="Label" parent="Bow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -13.0
+offset_right = 149.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bow"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Baguette" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 725.0
+offset_top = 285.0
+offset_right = 844.936
+offset_bottom = 321.224
+
+[node name="BaguetteText" type="Label" parent="Baguette"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -12.0
+offset_right = 157.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Baguette
+"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shield" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 119.0
+offset_top = 502.0
+offset_right = 238.936
+offset_bottom = 538.224
+
+[node name="ShieldText" type="Label" parent="Shield"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -12.0
+offset_right = 151.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shield"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Phi" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 506.0
+offset_top = 506.0
+offset_right = 625.936
+offset_bottom = 542.224
+
+[node name="PhiText" type="Label" parent="Phi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -12.0
+offset_right = 157.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Phi"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lapin" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 907.0
+offset_top = 498.0
+offset_right = 1026.94
+offset_bottom = 534.224
+
+[node name="LapinText" type="Label" parent="Lapin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -12.0
+offset_right = 157.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bunny"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectWeapon" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -245.0
+offset_right = 150.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select two weapons"
+label_settings = ExtResource("3_o1qbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Bow" to="." method="_on_bow_pressed"]
+[connection signal="pressed" from="Baguette" to="." method="_on_baguette_pressed"]
+[connection signal="pressed" from="Shield" to="." method="_on_shield_pressed"]
+[connection signal="pressed" from="Phi" to="." method="_on_phi_pressed"]
+[connection signal="pressed" from="Lapin" to="." method="_on_lapin_pressed"]
