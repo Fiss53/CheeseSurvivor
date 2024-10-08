@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3 uid="uid://bn7b8fuf6q8vl"]
+
+[ext_resource type="Script" path="res://Scripts/GameSettingsMenu.gd" id="1_dwkd4"]
+[ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="1_f47i3"]
+[ext_resource type="Texture2D" uid="uid://muh2fxr1p55o" path="res://Assets/baguette.png" id="2_lffjd"]
+[ext_resource type="Texture2D" uid="uid://x0usc4llim5f" path="res://Assets/arc_10.png" id="3_ibowg"]
+[ext_resource type="Texture2D" uid="uid://11dinougu5lr" path="res://Assets/FlecheCarotte.png" id="4_gmln1"]
+[ext_resource type="Texture2D" uid="uid://cebjb6dhrn5a5" path="res://Assets/shield.png" id="5_48jx4"]
+[ext_resource type="Texture2D" uid="uid://2lnbsaeator4" path="res://Assets/PHI.png" id="6_ff2ya"]
+[ext_resource type="Texture2D" uid="uid://733icdpvo8pw" path="res://Assets/Lapin.png" id="7_fkuqr"]
+
+[sub_resource type="Theme" id="Theme_xcgi3"]
+default_font = ExtResource("1_f47i3")
+default_font_size = 50
+
+[node name="GameSettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwkd4")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 50.0
+offset_right = 995.0
+offset_bottom = 104.0
+theme = SubResource("Theme_xcgi3")
+text = "Select your weapons"
+
+[node name="MainWeaponTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 159.0
+offset_right = 541.0
+offset_bottom = 213.0
+theme = SubResource("Theme_xcgi3")
+theme_override_font_sizes/font_size = 36
+text = "Main Weapon"
+
+[node name="SecondaryWeaponTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 163.0
+offset_right = 1095.0
+offset_bottom = 217.0
+theme = SubResource("Theme_xcgi3")
+theme_override_font_sizes/font_size = 36
+text = "Secondary Weapon"
+
+[node name="BaguetteSwordWeaponButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 239.0
+offset_right = 303.0
+offset_bottom = 389.0
+
+[node name="TextureRect" type="TextureRect" parent="BaguetteSwordWeaponButton"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 9.0
+offset_right = 120.0
+offset_bottom = 99.0
+texture = ExtResource("2_lffjd")
+
+[node name="Label" type="Label" parent="BaguetteSwordWeaponButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 111.0
+offset_right = 146.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("1_f47i3")
+text = "BAGUETTE
+SWORD"
+horizontal_alignment = 1
+
+[node name="CarotBowWeaponButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 423.0
+offset_right = 303.0
+offset_bottom = 573.0
+
+[node name="TextureRect" type="TextureRect" parent="CarotBowWeaponButton"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 121.0
+offset_bottom = 100.0
+texture = ExtResource("3_ibowg")
+
+[node name="TextureRect2" type="TextureRect" parent="CarotBowWeaponButton"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 9.0
+offset_right = 120.0
+offset_bottom = 99.0
+texture = ExtResource("4_gmln1")
+
+[node name="Label" type="Label" parent="CarotBowWeaponButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 111.0
+offset_right = 146.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("1_f47i3")
+text = "CAROT
+ARROW"
+horizontal_alignment = 1
+
+[node name="ShieldSecondaryWeaponButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 238.0
+offset_right = 775.0
+offset_bottom = 388.0
+
+[node name="TextureRect" type="TextureRect" parent="ShieldSecondaryWeaponButton"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 100.0
+texture = ExtResource("5_48jx4")
+
+[node name="Label" type="Label" parent="ShieldSecondaryWeaponButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 148.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("1_f47i3")
+text = "SHIELD"
+horizontal_alignment = 1
+
+[node name="GoldenSpiralGunSecondaryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 238.0
+offset_right = 981.0
+offset_bottom = 388.0
+
+[node name="TextureRect" type="TextureRect" parent="GoldenSpiralGunSecondaryButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 62.0
+offset_right = 95.0
+offset_bottom = 152.0
+rotation = -0.764723
+texture = ExtResource("6_ff2ya")
+
+[node name="Label" type="Label" parent="GoldenSpiralGunSecondaryButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 148.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("1_f47i3")
+text = "GOLDEN
+SPIRAL GUN"
+horizontal_alignment = 1
+
+[node name="RabbitPetSecondaryWeaponButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 410.0
+offset_right = 879.0
+offset_bottom = 560.0
+
+[node name="TextureRect" type="TextureRect" parent="RabbitPetSecondaryWeaponButton"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 121.0
+offset_bottom = 100.0
+texture = ExtResource("7_fkuqr")
+
+[node name="Label" type="Label" parent="RabbitPetSecondaryWeaponButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 148.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("1_f47i3")
+text = "RABBIT
+PET"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="BaguetteSwordWeaponButton" to="." method="_on_baguette_sword_weapon_button_pressed"]
+[connection signal="pressed" from="CarotBowWeaponButton" to="." method="_on_carot_bow_weapon_button_pressed"]
+[connection signal="pressed" from="ShieldSecondaryWeaponButton" to="." method="_on_shield_secondary_weapon_button_pressed"]
+[connection signal="pressed" from="GoldenSpiralGunSecondaryButton" to="." method="_on_golden_spiral_gun_secondary_button_pressed"]
+[connection signal="pressed" from="RabbitPetSecondaryWeaponButton" to="." method="_on_rabbit_pet_secondary_weapon_button_pressed"]

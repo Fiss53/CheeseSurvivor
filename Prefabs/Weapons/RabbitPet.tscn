@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2uiukvdp22gs"]
 
 [ext_resource type="Script" path="res://Scripts/RabbitPet.gd" id="1_6qvjj"]
-[ext_resource type="Texture2D" uid="uid://hmosy6wj2evy" path="res://Assets/CharacterV4.png" id="2_rovqy"]
+[ext_resource type="Texture2D" uid="uid://733icdpvo8pw" path="res://Assets/Lapin.png" id="2_g8nuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5h41"]
 size = Vector2(25.3333, 28.3333)
@@ -14,7 +14,7 @@ scale = Vector2(3, 3)
 script = ExtResource("1_6qvjj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rovqy")
+texture = ExtResource("2_g8nuc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.666666, 1.83333)
