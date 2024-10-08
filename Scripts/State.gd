@@ -1,7 +1,7 @@
 extends Node2D
 
-var firstWeapon
-var secondWeapon
+var firstWeapon = "baguette_sword"
+var secondWeapon = "shield"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

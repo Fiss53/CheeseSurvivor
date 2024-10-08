@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dh0dvvqri1o2t" path="res://Assets/button-hover.png" id="4_jqoxf"]
 [ext_resource type="Texture2D" uid="uid://cgdrmbggosxaq" path="res://Assets/button-click.png" id="5_blj7e"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbe7d"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qa5dl"]
 texture = ExtResource("4_jqoxf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2xqt"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu3ey"]
 texture = ExtResource("3_mnigk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lreb8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pt1pc"]
 texture = ExtResource("5_blj7e")
 
 [sub_resource type="Theme" id="Theme_ixp6b"]
@@ -20,9 +20,9 @@ default_font = ExtResource("2_1hbhf")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxTexture_qbe7d")
-Button/styles/normal = SubResource("StyleBoxTexture_c2xqt")
-Button/styles/pressed = SubResource("StyleBoxTexture_lreb8")
+Button/styles/hover = SubResource("StyleBoxTexture_qa5dl")
+Button/styles/normal = SubResource("StyleBoxTexture_vu3ey")
+Button/styles/pressed = SubResource("StyleBoxTexture_pt1pc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcyu3"]
 texture = ExtResource("4_jqoxf")

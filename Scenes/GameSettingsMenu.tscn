@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn7b8fuf6q8vl"]
+[gd_scene load_steps=17 format=3 uid="uid://bn7b8fuf6q8vl"]
 
 [ext_resource type="Script" path="res://Scripts/GameSettingsMenu.gd" id="1_dwkd4"]
 [ext_resource type="FontFile" uid="uid://cw5l03t1e0nu8" path="res://Fonts/AcPlus_IBM_BIOS.ttf" id="1_f47i3"]
@@ -8,10 +8,31 @@
 [ext_resource type="Texture2D" uid="uid://cebjb6dhrn5a5" path="res://Assets/shield.png" id="5_48jx4"]
 [ext_resource type="Texture2D" uid="uid://2lnbsaeator4" path="res://Assets/PHI.png" id="6_ff2ya"]
 [ext_resource type="Texture2D" uid="uid://733icdpvo8pw" path="res://Assets/Lapin.png" id="7_fkuqr"]
+[ext_resource type="Texture2D" uid="uid://dh0dvvqri1o2t" path="res://Assets/button-hover.png" id="9_pf4n6"]
+[ext_resource type="Texture2D" uid="uid://br2txog1wc50q" path="res://Assets/button-regular.png" id="10_hjtbs"]
+[ext_resource type="Texture2D" uid="uid://cgdrmbggosxaq" path="res://Assets/button-click.png" id="11_mkwa6"]
 
 [sub_resource type="Theme" id="Theme_xcgi3"]
 default_font = ExtResource("1_f47i3")
 default_font_size = 50
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbe7d"]
+texture = ExtResource("9_pf4n6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2xqt"]
+texture = ExtResource("10_hjtbs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lreb8"]
+texture = ExtResource("11_mkwa6")
+
+[sub_resource type="Theme" id="Theme_ktvfb"]
+default_font = ExtResource("1_f47i3")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_qbe7d")
+Button/styles/normal = SubResource("StyleBoxTexture_c2xqt")
+Button/styles/pressed = SubResource("StyleBoxTexture_lreb8")
 
 [node name="GameSettingsMenu" type="Control"]
 layout_mode = 3
@@ -189,8 +210,19 @@ text = "RABBIT
 PET"
 horizontal_alignment = 1
 
+[node name="PlayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(128, 64)
+offset_left = 446.0
+offset_top = 558.0
+offset_right = 574.0
+offset_bottom = 622.0
+focus_mode = 0
+theme = SubResource("Theme_ktvfb")
+text = "Play"
+
 [connection signal="pressed" from="BaguetteSwordWeaponButton" to="." method="_on_baguette_sword_weapon_button_pressed"]
 [connection signal="pressed" from="CarotBowWeaponButton" to="." method="_on_carot_bow_weapon_button_pressed"]
 [connection signal="pressed" from="ShieldSecondaryWeaponButton" to="." method="_on_shield_secondary_weapon_button_pressed"]
 [connection signal="pressed" from="GoldenSpiralGunSecondaryButton" to="." method="_on_golden_spiral_gun_secondary_button_pressed"]
 [connection signal="pressed" from="RabbitPetSecondaryWeaponButton" to="." method="_on_rabbit_pet_secondary_weapon_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

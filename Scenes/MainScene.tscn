@@ -1,17 +1,16 @@
-[gd_scene load_steps=37 format=3 uid="uid://8srdgtfdfh0p"]
+[gd_scene load_steps=36 format=3 uid="uid://8srdgtfdfh0p"]
 
 [ext_resource type="Texture2D" uid="uid://cxluyoj2g4se8" path="res://Assets/tilesetv1.png" id="1_0mx58"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_72qwc"]
+[ext_resource type="Script" path="res://Scripts/MainScene.gd" id="1_feo4p"]
 [ext_resource type="Texture2D" uid="uid://ds7ovdjey2pi4" path="res://Assets/CharacterSheet.png" id="2_48xf5"]
 [ext_resource type="Script" path="res://Scripts/DeadEnnemies.gd" id="2_r3tma"]
 [ext_resource type="Script" path="res://Scripts/State.gd" id="2_u0mh0"]
 [ext_resource type="Script" path="res://Scripts/EnnemyPool.gd" id="3_v0ycr"]
 [ext_resource type="Script" path="res://Scripts/PetsPool.gd" id="4_qu7lb"]
 [ext_resource type="Script" path="res://Scripts/TimeLabel.gd" id="5_wd5px"]
-[ext_resource type="PackedScene" uid="uid://bqomsa8qaxu1k" path="res://Prefabs/Weapons/BaguetteSword.tscn" id="7_ng4q3"]
 [ext_resource type="LabelSettings" path="res://Fonts/Settings_label_menu.tres" id="8_5ofox"]
 [ext_resource type="Script" path="res://Scripts/Bounds.gd" id="8_t6rl2"]
-[ext_resource type="PackedScene" uid="uid://rffeoaof7v0a" path="res://Prefabs/Weapons/GoldenSpiralGun.tscn" id="9_f3vmg"]
 [ext_resource type="AudioStream" uid="uid://1ow3arihwi86" path="res://Soundtracks/JeanPierre.mp3" id="11_jk22v"]
 [ext_resource type="Script" path="res://Scripts/BackgroundMusic.gd" id="12_afynx"]
 
@@ -195,6 +194,7 @@ size = Vector2(332, 5618)
 size = Vector2(8522, 325)
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_feo4p")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fbq21")
@@ -227,10 +227,6 @@ animation = &"left"
 polygon = PackedVector2Array(6, -36, 36, 16, 22, 29, 13, 33, -21, 33, -30, 30, -33, 24, -33, 14, -5, -36)
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
-
-[node name="Weapon" parent="Player" instance=ExtResource("7_ng4q3")]
-
-[node name="SecondaryWeapon" parent="Player" instance=ExtResource("9_f3vmg")]
 
 [node name="TimeLabel" type="Label" parent="Player"]
 anchors_preset = 8

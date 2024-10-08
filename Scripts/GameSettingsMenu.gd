@@ -55,3 +55,12 @@ func _on_golden_spiral_gun_secondary_button_pressed():
 func _on_rabbit_pet_secondary_weapon_button_pressed():
 	selected_secondary_weapon = "rabbit_pet"
 	update_secondary_weapon_buttons()
+
+
+func _on_play_button_pressed():
+	var main_scene: PackedScene = preload("res://Scenes/MainScene.tscn")
+	
+	State.firstWeapon = selected_weapon
+	State.secondWeapon = selected_secondary_weapon
+	
+	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
